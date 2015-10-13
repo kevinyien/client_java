@@ -64,7 +64,7 @@ public class StandardExports extends Collector {
   public List<MetricFamilySamples> collect() {
     List<MetricFamilySamples> mfs = new ArrayList<MetricFamilySamples>();
 
-    mfs.add(singleMetric("process_cpu_seconds_total", Type.COUNTER, "CPU time used by the process in seconds.",
+    mfs.add(singleMetric("process_cpu_seconds_total", Type.COUNTER, "Total user and system CPU time spent in seconds.",
         osBean.getProcessCpuTime() / NANOSECONDS_PER_SECOND));
 
     mfs.add(singleMetric("process_start_time_seconds", Type.GAUGE, "Start time of the process, in unixtime.",
